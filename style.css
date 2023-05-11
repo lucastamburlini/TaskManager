@@ -1,0 +1,107 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
+  font-size: 12px;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Estilos del formulario */
+form {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.input-tarea {
+  padding: 1rem;
+  border-radius: 5px 0 0 5px;
+  border: none;
+}
+
+#inputTarea:focus {
+  outline: none;
+}
+
+.boton-agregar {
+  padding: 1rem;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.boton-agregar:hover {
+  background-color: #27ae60;
+}
+
+/* Estilos de la lista */
+.lista-tareas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-tareas li {
+  display: grid;
+  grid-template-columns: 60% 30% 10%;
+  align-items: center;
+  background-color: #fff;
+padding: 15px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  word-wrap: break-word;
+}
+
+.lista-tareas li span {
+  text-align: center;
+  padding: 5px;
+}
+
+.lista-tareas li:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.lista-tareas li button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.lista-tareas li button:hover {
+  background-color: #c0392b;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 50%;
+  }
+
+  .lista-tareas li {
+
+    grid-template-columns: 60% 30% 5%;
+
+  }
+
+}
