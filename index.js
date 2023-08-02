@@ -1,10 +1,7 @@
 let inputTarea = document.querySelector("#inputTarea");
 let formTareas = document.querySelector("#formTareas");
 let listTareas = document.querySelector("#listTareas");
-
-if (localStorage.getItem("tareas")) {
-  listTareas.innerHTML = localStorage.getItem("tareas");
-}
+let btnCompartir = document.querySelector("btnCompartir");
 
 formTareas.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -14,24 +11,18 @@ formTareas.addEventListener("submit", function (event) {
     nuevaTarea.innerText = tarea;
     listTareas.appendChild(nuevaTarea);
 
+    const fechaTexto = document.createElement("span");
+    fechaTexto.innerText = new Date().toLocaleString();
+    nuevaTarea.appendChild(fechaTexto);
+
     const eliminarTarea = document.createElement("button");
-    eliminarTarea.innerText = "Eliminar";
+    eliminarTarea.innerText = "X";
     nuevaTarea.appendChild(eliminarTarea);
 
     eliminarTarea.onclick = function () {
       nuevaTarea.remove();
     };
-
-    const fechaTexto = document.createElement("span");
-    fechaTexto.innerText = new Date().toLocaleString();
-    nuevaTarea.appendChild(fechaTexto);
   }
 
   inputTarea.value = "";
-
-  localStorage.setItem("tareas", listTareas.innerHTML);
-});
-
-window.addEventListener("beforeunload", function () {
-  localStorage.setItem("tareas", listTareas.innerHTML);
 });
